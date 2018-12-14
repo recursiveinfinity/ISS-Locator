@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ISSLocator</string>
+    <string name="time_message">Time: %1$s</string>
+    <string name="duration_message">Duration: %1$s Seconds</string>
+    <string name="location_message">Location: %1$s</string>
+
+    <string name="permissions_rationale">We need your permission to access your location, so ISS passes through your location can be calculated</string>
+</resources>
