@@ -71,7 +71,15 @@ dependencies {
     implementation 'com.jakewharton.threetenabp:threetenabp:1.1.1'
 
 
+
+
     testImplementation 'junit:junit:4.12'
+
+    //Powermock
+    testImplementation 'org.powermock:powermock-core:1.7.1'
+    testImplementation 'org.powermock:powermock-module-junit4:1.7.1'
+    testImplementation 'org.powermock:powermock-api-mockito2:1.7.1'
+
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

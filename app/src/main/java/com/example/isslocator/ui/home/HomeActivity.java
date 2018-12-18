@@ -92,4 +92,9 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     public void hideProgress() {
         progressBar.setVisibility(View.GONE);
     }
+
+    @Override
+    public void showList(List<Integer> numbers) {
+
+    }
 }

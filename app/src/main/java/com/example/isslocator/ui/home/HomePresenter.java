@@ -16,6 +16,8 @@ import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.FormatStyle;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import io.reactivex.Observable;
@@ -108,6 +110,14 @@ public class HomePresenter implements HomeContract.Presenter {
         if (throwable.getMessage() != null) {
             view.showError(throwable.getMessage());
         }
+    }
+
+    public void testList() {
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            numbers.add(i);
+        }
+        view.showList(numbers);
     }
 
 

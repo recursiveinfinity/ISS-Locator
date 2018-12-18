@@ -13,6 +13,7 @@ public interface HomeContract {
         void showError(@NonNull String message);
         void showProgress();
         void hideProgress();
+        void showList(List<Integer> numbers);
     }
 
     interface Presenter {
