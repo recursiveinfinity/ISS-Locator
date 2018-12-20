@@ -118,6 +118,7 @@ public class HomePresenterTest {
             //When
             homePresenter.getLocation();
 
+
             //Then
             verify(permissionsManager).getPermissionGrantObservable();
             verify(locationManager).getLocationObservable();

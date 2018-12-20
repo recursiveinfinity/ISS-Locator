@@ -2,7 +2,7 @@ package com.example.isslocator.common;
 
 public class Constants {
 
-    public static final String BASE_URL = "http://api.open-notify.org/";
+    public static String BASE_URL = "http://api.open-notify.org/";
     public static final String ISS_LOCATOR_ENDPOINT = "iss-pass.json";
 
 

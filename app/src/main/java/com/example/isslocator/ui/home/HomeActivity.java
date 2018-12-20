@@ -2,6 +2,7 @@ package com.example.isslocator.ui.home;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.test.espresso.idling.CountingIdlingResource;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,6 +36,9 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
 
     private final HomeAdapter homeAdapter = new HomeAdapter();
 
+    private final CountingIdlingResource countingIdlingResource =
+            new CountingIdlingResource("Network_Call");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +62,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     @Override
     protected void onStart() {
         super.onStart();
+        countingIdlingResource.increment();
         presenter.getLocation();
     }
 
@@ -76,11 +81,17 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     @Override
     public void showResults(@NonNull List<Result> results) {
         homeAdapter.setData(results);
+        countingIdlingResource.decrement();
     }
 
     @Override
     public void showError(@NonNull String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        countingIdlingResource.decrement();
+    }
+
+    public CountingIdlingResource getCountingIdlingResource() {
+        return countingIdlingResource;
     }
 
     @Override
@@ -97,4 +108,6 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.View
     public void showList(List<Integer> numbers) {
 
     }
+
+
 }
